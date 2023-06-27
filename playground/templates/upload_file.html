@@ -1,0 +1,62 @@
+<!-- playground/upload_file.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload File</title>
+  <style>
+    /* Styles for header, form, and container */
+    /* ... (previous styles) ... */
+
+    /* Navigation styles */
+    nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li:last-child {
+      margin-right: 0;
+    }
+
+    nav ul li a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Upload File</h2>
+  </header>
+
+  <div class="container">
+    {% if user.is_authenticated %}
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+      </form>
+    {% else %}
+      <p>Please log in to upload files.</p>
+      <p><a class="login-link" href="{% url 'login' %}">Log in</a></p>
+    {% endif %}
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'uploads' %}">Go to Uploads</a></li>
+      <li><a href="{% url 'home' %}">Return to Home</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

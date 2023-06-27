@@ -1,0 +1,31 @@
+<!-- register.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/styles.css' %}">
+</head>
+<body>
+<nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Return to Home</a></li>
+
+        </ul>
+    </nav>
+    <h2>Register</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <nav>
+        <ul>
+            <li><a href="{% url 'login' %}" target="_blank">You already have an account? Login here!</a></li>
+
+        </ul>
+    </nav>
+</body>
+</html>
+

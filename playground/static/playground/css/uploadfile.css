@@ -1,0 +1,31 @@
+input[type="file"] {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+input[type="file"]:before {
+  content: 'Choose File';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="file"]:hover:before {
+  background-color: #0056b3;
+}

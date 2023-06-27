@@ -1,0 +1,30 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/styles.css' %}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Return to Home</a></li>
+
+        </ul>
+    </nav>
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+<nav>
+        <ul>
+             <li><a href="{% url 'register' %}" target="_blank">You don't have an account? Register here!</a></li>
+            <!-- Add more navigation links here -->
+        </ul>
+    </nav>
+</body>
+</html>

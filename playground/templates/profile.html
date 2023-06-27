@@ -1,0 +1,129 @@
+<!-- playground/profile.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <style>
+    body {
+      background-color: #f8f8f8;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #007bff;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    h2 {
+      color: #007bff;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  </header>
+  <h1>Your Profile</h1>
+  <div class="container">
+    <!-- Display user's profile information -->
+    <p>Your Username:</p>
+    <p> {{ user.username }}</p>
+    <h2>Bio</h2>
+    {% if user.userprofile.bio %}
+      <p>{{ user.userprofile.bio }}</p>
+    {% else %}
+      <p>No bio available.</p>
+    {% endif %}
+
+    <!-- Edit profile form -->
+    <h2>Edit Profile</h2>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}">Return to Home</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

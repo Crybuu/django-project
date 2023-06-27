@@ -1,0 +1,31 @@
+<!-- not_logged_in.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Not Logged In</title>
+  <link rel="stylesheet" href="{% static 'playground/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Website</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      <li><a href="{% url 'signup' %}">Signup</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>You are not logged in.</h2>
+    <p>Please login or sign up to access the full features of the website.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 My Web App. All rights reserved.</p>
+    <p>If you encounter any problems contact me under: cryingbuu@gmail.com</p>
+  </footer>
+</body>
+</html>

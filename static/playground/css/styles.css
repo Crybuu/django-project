@@ -1,0 +1,56 @@
+/* styles.css */
+
+/* Body styles */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: #e1f5fe;
+  color: #333;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #e1f5fe;
+  color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Content styles */
+.content {
+  padding: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #e1f5fe;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}

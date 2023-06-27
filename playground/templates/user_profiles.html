@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'playground/css/styles.css' %}">
+<h1>User Profiles</h1>
+
+{% for user in users %}
+  <div class="user-profile">
+    <h2>{{ user.username }}</h2>
+    <h3>Bio</h3>
+    {% if user.userprofile.bio %}
+      <p>{{ user.userprofile.bio }}</p>
+    {% else %}
+      <p>No bio available.</p>
+    {% endif %}
+  </div>
+{% endfor %}
+
+<nav>
+  <ul>
+    <li><a href="{% url 'home' %}">Return to Home</a></li>
+  </ul>
+</nav>

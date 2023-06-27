@@ -42,11 +42,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-def custom_404_page(request, exception):
-    if not request.user.is_authenticated:
-        return render(request, 'not_logged_in.html')
-    else:
-        return page_not_found(request, exception)
+
 
 handler404 = 'playground.urls.custom_404_page'
 
